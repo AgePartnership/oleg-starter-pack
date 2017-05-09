@@ -22,7 +22,7 @@ Once you've done that, in the root of your project directory, run:
 
 <pre>
     <code>
-        bower install lego-starter-pack --save
+        bower install oleg-starter-pack --save
     </code>
 </pre>
 
@@ -30,11 +30,11 @@ This will create the bower_components directory with the start pack so now you j
 
 <pre>
     <code>
-        @import "bower_components/lego-starter-pack/base/mixins";
-        @import "bower_components/lego-starter-pack/base/reset";
-        @import "bower_components/lego-starter-pack/base/breakpoints";
-        @import "bower_components/lego-starter-pack/base/box-sizing";
-        @import "bower_components/lego-starter-pack/utilities/text-align";
+        @import "bower_components/oleg-starter-pack/base/mixins";
+        @import "bower_components/oleg-starter-pack/base/reset";
+        @import "bower_components/oleg-starter-pack/base/breakpoints";
+        @import "bower_components/oleg-starter-pack/base/box-sizing";
+        @import "bower_components/oleg-starter-pack/utilities/text-align";
     </code>
 </pre>
 
