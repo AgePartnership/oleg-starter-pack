@@ -1,0 +1,13 @@
+.u-clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.u-clear-left {
+    clear: left;
+}
+
+.u-clear-right {
+    clear: right;
+}

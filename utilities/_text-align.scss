@@ -1,0 +1,11 @@
+.u-text-align--center {
+    @include text-align--center;
+}
+
+.u-text-align--left {
+    @include text-align--left;
+}
+
+.u-text-align--right {
+    @include text-align--right;
+}

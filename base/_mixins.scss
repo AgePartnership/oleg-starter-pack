@@ -1,0 +1,40 @@
+/* # Mixins
+
+This file contains a collection of mixins available for use in your Sass.
+
+Ideally, all mixins should be declared here but in some cases, they've been declared within an appropriate context. For example, the typography partial (config/_typography.scss) contains mixins controlling general site-wide font sizes.
+
+*/
+
+
+/* CSS3 Transition
+    Usage: @include transition(width,0.3s,ease-out);
+ */
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+/* CSS3 Background cover */
+@mixin backgroundSize($value) {
+    -webkit-background-size: $value;
+    -moz-background-size: $value;
+    -o-background-size: $value;
+    background-size: $value;
+}
+
+// Text alignments
+// Dev note: This exists here as a mixin so you can include it in your CSS if you wish.
+// You can also implement these rules using a class in your HTML. Refer to base/_text-align.scss
+@mixin text-align--center {
+    text-align: center;
+}
+@mixin text-align--left {
+    text-align: left;
+}
+@mixin text-align--right {
+    text-align: right;
+}
