@@ -39,6 +39,14 @@ This will create the bower_components directory with the start pack so now you j
     </code>
 </pre>
 
+Note: You may need to customise the directory path in your imports, relative to where your main Sass file is located. For example:
+
+<pre>
+    <code>
+        @import "../../bower_components/oleg-starter-pack/base/mixins";
+    </code>
+</pre>
+
 --
 
 Copyright 2017 Age Partnership Limited
