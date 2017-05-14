@@ -34,6 +34,7 @@ This will create the bower_components directory with the start pack so now you j
         @import "bower_components/oleg-starter-pack/base/reset";
         @import "bower_components/oleg-starter-pack/base/breakpoints";
         @import "bower_components/oleg-starter-pack/base/box-sizing";
+        @import "bower_components/oleg-starter-pack/utilities/clears";
         @import "bower_components/oleg-starter-pack/utilities/text-align";
     </code>
 </pre>
