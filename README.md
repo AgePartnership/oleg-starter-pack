@@ -26,7 +26,27 @@ Once you've done that, in the root of your project directory, run:
     </code>
 </pre>
 
-This will create the bower_components directory with the start pack so now you just need to include the files at the top of your primary Sass file:
+This will create the bower_components directory with the start pack so now you can import them into your project.
+
+## Importing files located in bower_components
+
+There are two methods of importing the files in this component. You can import them all in one go using the _include-all.scss file. Place the following code at the top of your main Sass file:
+
+<pre>
+    <code>
+        @import "bower_components/oleg-starter-pack/include-all";
+    </code>
+</pre>
+
+Note: You may need to customise the directory path in your imports, relative to where your main Sass file is located. For example:
+
+<pre>
+    <code>
+        @import "../../bower_components/oleg-starter-pack/include-all";
+    </code>
+</pre>
+
+Alternatively, you can include files individually to only use the files you need for a project. This option probably won't be needed in most cases but it's there if you need it.
 
 <pre>
     <code>
@@ -39,13 +59,7 @@ This will create the bower_components directory with the start pack so now you j
     </code>
 </pre>
 
-Note: You may need to customise the directory path in your imports, relative to where your main Sass file is located. For example:
-
-<pre>
-    <code>
-        @import "../../bower_components/oleg-starter-pack/base/mixins";
-    </code>
-</pre>
+Again, the directory path may need updating like the example above.
 
 --
 
