@@ -75,6 +75,17 @@ The gutters file contains a simple Sass loop to give you a base level of options
     </code>
 </pre>
 
+Note: you'll need to ensure your config sits higher in your main Sass file than the gutter import. For example:
+
+<pre>
+    <code>
+        @import "config/config";
+        @import "bower_components/oleg-starter-pack/include-all";
+    </code>
+</pre>
+
+Not doing so will throw an error because $space won't be defined if the bower component is called first.
+
 Once this is set, you can use the class in your HTML. By default, you have 10 increments available, `u-gutter-bottom-[1-10]`, the Sass takes the number at the end and multiplies it by the value set to `$space`. So with the example `$space` variable set above, the rendered CSS will look like this:
 
 <pre>
