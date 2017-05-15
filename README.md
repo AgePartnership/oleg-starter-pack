@@ -61,6 +61,35 @@ Alternatively, you can include files individually to only use the files you need
 
 Again, the directory path may need updating like the example above.
 
+## Notes about specific files
+
+The vast majority of the files in this component don't have any dependencies but occassionally some additional work in your project-specific Sass files will be needed to make use of some features.
+
+### Gutters
+
+The gutters file contains a simple Sass loop to give you a base level of options to create space between elements. In order to use this, you'll need to have a `$space` variable set in your project's Sass config file.
+
+<pre>
+    <code>
+        $space: 15px;
+    </code>
+</pre>
+
+Once this is set, you can use the class in your HTML. By default, you have 10 increments available, `u-gutter-bottom-[1-10]`, the Sass takes the number at the end and multiplies it by the value set to `$space`. So with the example `$space` variable set above, the rendered CSS will look like this:
+
+<pre>
+    <code>
+        .u-gutter-bottom-1 { margin-bottom: 15px; }
+        .u-gutter-bottom-2 { margin-bottom: 30px; }
+        .u-gutter-bottom-3 { margin-bottom: 45px; }
+        ...
+        .u-gutter-bottom-10 { margin-bottom: 150px; }
+    </code>
+</pre>
+
+If you need a bottom gutter larger than the default limit, seek help... or just hard-code it in your project. If there is a realistic use-case for increasing the default increments beyond 10, we need to review it before rolling it out.
+
+
 --
 
 Copyright 2017 Age Partnership Limited
