@@ -1,0 +1,9 @@
+// The variables set to $breakpoint below directly correspond with what's set in base/_breakpoints.scss. Refer to that file for breakpoint info...
+
+@each $breakpoint in phone-only, tablet-portrait-up, tablet-portrait-only, tablet-landscape-up, tablet-landscape-only, desktop-up, desktop-only,  big-desktop-up {
+  .u-hide--#{$breakpoint} {
+      @include breakpoint(#{$breakpoint}) {
+          display: none;
+      }
+  }
+}
