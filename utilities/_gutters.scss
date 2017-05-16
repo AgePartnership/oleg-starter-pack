@@ -1,5 +1,21 @@
 @for $i from 1 through 10 {
+    .u-gutter-all-#{$i} {
+        margin: $space * $i;
+    }
+
+    .u-gutter-top-#{$i} {
+        margin-top: $space * $i;
+    }
+
+    .u-gutter-right-#{$i} {
+        margin-right: $space * $i;
+    }
+
     .u-gutter-bottom-#{$i} {
         margin-bottom: $space * $i;
+    }
+
+    .u-gutter-left-#{$i} {
+        margin-left: $space * $i;
     }
 }
