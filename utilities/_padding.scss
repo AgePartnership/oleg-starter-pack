@@ -1,5 +1,21 @@
 @for $i from 1 through 10 {
+    .u-padding-all-#{$i} {
+        padding: $space * $i;
+    }
+
+    .u-padding-top-#{$i} {
+        padding-top: $space * $i;
+    }
+
+    .u-padding-right-#{$i} {
+        padding-right: $space * $i;
+    }
+
     .u-padding-bottom-#{$i} {
         padding-bottom: $space * $i;
+    }
+
+    .u-padding-left-#{$i} {
+        padding-left: $space * $i;
     }
 }
