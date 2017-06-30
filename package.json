@@ -1,0 +1,9 @@
+{
+  "name": "oleg-starter-pack",
+  "version": "1.0.4",
+  "description": "A place to store global brand information for use across various digital properties (Sass colour variables, typography etc)",
+  "main": "index.js",
+  "repository": "git@github.com:AgePartnership/oleg-starter-pack.git",
+  "author": "Sam Hardacre <me@nocturnalmonkey.com>",
+  "license": "MIT"
+}
