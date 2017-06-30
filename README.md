@@ -2,6 +2,8 @@
 
 The files contained here are intended to provide a project agnostic starting point for your CSS to include in any web project. This version is pretty "bare bones" but will gradually evolve to include more useful features and utitlities.
 
+This package is distributed through [npm](https://www.npmjs.com/).
+
 ## File structure
 
 There are currently two directories, base and utilities. They are both intended to be used on any project but the key difference is how the code is used.
@@ -14,27 +16,27 @@ Files in the base directory contain CSS which isn't targeted directly using a cl
 
 Files in utilities contains useful, compact snippets of code which can be accessed directly using a class in your HTML
 
-## Install using bower
+## Install using npm
 
-First step is to install Bower: https://bower.io/#install-bower
+Before you can use npm, you need to [install Node](https://nodejs.org/en/download/).
 
 Once you've done that, in the root of your project directory, run:
 
 <pre>
     <code>
-        bower install oleg-starter-pack --save
+        npm install oleg-starter-pack
     </code>
 </pre>
 
-This will create the bower_components directory with the start pack so now you can import them into your project.
+This will install the starter pack in the 'node_modules' directory located in the root of your project.
 
-## Importing files located in bower_components
+## Importing files located in node_modules
 
 There are two methods of importing the files in this component. You can import them all in one go using the _include-all.scss file. Place the following code at the top of your main Sass file:
 
 <pre>
     <code>
-        @import "bower_components/oleg-starter-pack/include-all";
+        @import "node_modules/oleg-starter-pack/all";
     </code>
 </pre>
 
@@ -42,7 +44,7 @@ Note: You may need to customise the directory path in your imports, relative to 
 
 <pre>
     <code>
-        @import "../../bower_components/oleg-starter-pack/include-all";
+        @import "../../node_modules/oleg-starter-pack/all";
     </code>
 </pre>
 
@@ -50,12 +52,12 @@ Alternatively, you can include files individually to only use the files you need
 
 <pre>
     <code>
-        @import "bower_components/oleg-starter-pack/base/mixins";
-        @import "bower_components/oleg-starter-pack/base/reset";
-        @import "bower_components/oleg-starter-pack/base/breakpoints";
-        @import "bower_components/oleg-starter-pack/base/box-sizing";
-        @import "bower_components/oleg-starter-pack/utilities/clears";
-        @import "bower_components/oleg-starter-pack/utilities/text-align";
+        @import "node_modules/oleg-starter-pack/base/mixins";
+        @import "node_modules/oleg-starter-pack/base/reset";
+        @import "node_modules/oleg-starter-pack/base/breakpoints";
+        @import "node_modules/oleg-starter-pack/base/box-sizing";
+        @import "node_modules/oleg-starter-pack/utilities/clears";
+        @import "node_modules/oleg-starter-pack/utilities/text-align";
     </code>
 </pre>
 
