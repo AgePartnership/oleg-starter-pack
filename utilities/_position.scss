@@ -1,0 +1,13 @@
+.u-position {
+    &--relative {
+        position: relative;
+    }
+
+    &--absolute {
+        position: absolute;
+    }
+
+    &--static {
+        position: static;
+    }
+}
