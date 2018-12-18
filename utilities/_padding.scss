@@ -19,3 +19,11 @@
         padding-left: $space * $i;
     }
 }
+
+@each $direction in top, left, bottom, right {
+    .u-cancel-padding {
+        &--#{$direction} {
+            padding-#{$direction}: 0;
+        }
+    }
+}
