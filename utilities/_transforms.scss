@@ -1,0 +1,13 @@
+.u-transform {
+    &--upper {
+        text-transform: uppercase;
+    }
+
+    &--lower {
+        text-transform: lowercase;
+    }
+
+    &--capitalize {
+        text-transform: capitalize;
+    }
+}
