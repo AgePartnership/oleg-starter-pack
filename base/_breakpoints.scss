@@ -1,33 +1,33 @@
 @mixin breakpoint($class) {
     @if $class == phone-only {
-        @media all and (max-width: 599px) { @content; }
+        @media all and (max-width: $mobile-upper) { @content; }
     }
     @else if $class == tablet-portrait-up {
-        @media all and (min-width: 600px) { @content; }
+        @media all and (min-width: $tablet-portrait-lower) { @content; }
         .lt-ie9 & { @content }
     }
     @else if $class == tablet-portrait-only {
-        @media all and (min-width: 600px) and (max-width: 899px) { @content; }
+        @media all and (min-width: $tablet-portrait-lower) and (max-width: $tablet-portrait-upper) { @content; }
         .lt-ie9 & { @content }
     }
     @else if $class == tablet-landscape-up {
-        @media all and (min-width: 900px) { @content; }
+        @media all and (min-width: $tablet-landscape-lower) { @content; }
         .lt-ie9 & { @content }
     }
     @else if $class == tablet-landscape-only {
-        @media all and (min-width: 900px) and (max-width: 1199px) and (orientation : landscape) { @content; }
+        @media all and (min-width: $tablet-landscape-lower) and (max-width: $tablet-landscape-upper) and (orientation : landscape) { @content; }
         .lt-ie9 & { @content }
     }
     @else if $class == desktop-up {
-        @media all and (min-width: 1200px) { @content; }
+        @media all and (min-width: $desktop-lower) { @content; }
         .lt-ie9 & { @content }
     }
     @else if $class == desktop-only {
-        @media (min-width: 1200px) and (max-width: 1799px) { @content; }
+        @media (min-width: $desktop-lower) and (max-width: $desktop-upper) { @content; }
         .lt-ie9 & { @content }
     }
     @else if $class == big-desktop-up {
-        @media (min-width: 1800px) { @content; }
+        @media (min-width: $big-desktop-lower) { @content; }
         .lt-ie9 & { @content }
     }
 }
