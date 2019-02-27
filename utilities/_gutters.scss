@@ -23,7 +23,7 @@
 @each $direction in top, left, bottom, right {
     .u-cancel-gutter {
         &--#{$direction} {
-            margin-#{$direction}: 0;
+            margin-#{$direction}: 0!important;
         }
     }
 }
