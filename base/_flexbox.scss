@@ -1,3 +1,9 @@
+// These mixins allow us to use flexbox styling without having to add the extra lines with vendor prefixes in.
+// More info (and more available values*) on MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mixins
+
+// ===== Display Containers
+// Flex
+// Example use: @include flexbox;
 @mixin flexbox {
     display: -webkit-box;
     display: -moz-box;
@@ -6,6 +12,8 @@
     display: flex;
 }
 
+// Inline Flex
+// Example use: @include inline-flex;
 @mixin inline-flex {
     display: -webkit-inline-box;
     display: -moz-inline-box;
@@ -14,6 +22,9 @@
     display: inline-flex;
 }
 
+// ===== Flexbox Direction
+// Available values: row, row-reverse, column, column-reverse
+// Example use: @include flex-direction(row-reverse);
 @mixin flex-direction($value: row) {
     @if $value == row-reverse {
         -webkit-box-direction: reverse;
@@ -41,6 +52,9 @@
     flex-direction: $value;
 }
 
+// ===== Flexbox Wrap
+// Available values: nowrap (default), wrap, wrap-reverse
+// Example use: @include flex-wrap(wrap);
 @mixin flex-wrap($value: nowrap) {
     // No Webkit/FF Box fallback.
     -webkit-flex-wrap: $value;
@@ -52,6 +66,9 @@
     flex-wrap: $value;
 }
 
+// ===== Flexbox Flow
+// flex-flow is shorthand for flex-direction and flex-wrap
+// Example use: @include flex-flow(column-reverse wrap-reverse);
 @mixin flex-flow($values: (row nowrap)) {
     // No Webkit/FF Box fallback.
     -webkit-flex-flow: $values;
@@ -59,6 +76,9 @@
     flex-flow: $values;
 }
 
+// ===== Flexbox Order
+// Value: integer (positive, negative, or 0 (default))
+// Example use: @include order(3);
 @mixin order($int: 0) {
     -webkit-box-ordinal-group: $int + 1;
     -moz-box-ordinal-group: $int + 1;
@@ -67,6 +87,9 @@
     order: $int;
 }
 
+// ===== Flexbox Grow
+// Value: positive integer (0 is the default)
+// Example use: @include flex-grow(2);
 @mixin flex-grow($int: 1) {
     -webkit-box-flex: $int;
     -moz-box-flex: $int;
@@ -75,6 +98,9 @@
     flex-grow: $int;
 }
 
+// ===== Flexbox Shrink
+// Value: positive integer (0 is the default)
+// Example use: @include flex-shrink(1);
 @mixin flex-shrink($int: 0) {
     -webkit-flex-shrink: $int;
     -moz-flex-shrink: $int;
@@ -82,11 +108,17 @@
     flex-shrink: $int;
 }
 
+// ===== Flexbox Basis
+// Available values: auto (default), fill, max-content, min-content, fit-content, content, <width> (e.g. 10px, 3em or 50%)
+// Example use: @include flex-basis(fill);
 @mixin flex-basis($value: auto) {
     -webkit-flex-basis: $value;
     flex-basis: $value;
 }
 
+// ===== Flexbox Flex (shorthand)
+// flex is shorthand for flex-grow, flex-shrink and flex-basis
+// Example use: @include flex(2, 2, 10%);
 @mixin flex($fg: 1, $fs: 0, $fb: auto) {
     // Set a variable to be used by box-flex properties
     $fg-boxflex: $fg;
@@ -104,6 +136,9 @@
     flex: $fg $fs $fb;
 }
 
+// ===== Flexbox Justify Content*
+// Available values: center, start, end, flex-start (default), flex-end, left, right, normal, space-between, space-around, space-evenly, stretch
+// Example use: @include justify-content(space-between);
 @mixin justify-content($value: flex-start) {
     @if $value == flex-start {
         -webkit-box-pack: start;
@@ -128,6 +163,9 @@
     justify-content: $value;
 }
 
+// ===== Flexbox Align Items*
+// Available values: normal, stretch (default), center, start, end, flex-start, flex-end, self-start, self-end
+// Example use: @include align-items(center);
 @mixin align-items($value: stretch) {
     @if $value == flex-start {
         -webkit-box-align: start;
@@ -146,6 +184,9 @@
     align-items: $value;
 }
 
+// ===== Flexbox Align Self*
+// Available values: auto (default), normal, center, start, end, self-start, self-end, flex-start, flex-end
+// Example use: @include align-self(flex-end);
 @mixin align-self($value: auto) {
     // No Webkit Box Fallback.
     -webkit-align-self: $value;
@@ -159,6 +200,9 @@
     align-self: $value;
 }
 
+// ===== Flexbox Align Content*
+// Available values: normal, stretch (default), center, start, end, flex-start, flex-end, space-between, space-around, space-evenly
+// Example use: @include align-content(flex-end);
 @mixin align-content($value: stretch) {
     // No Webkit Box Fallback.
     -webkit-align-content: $value;
