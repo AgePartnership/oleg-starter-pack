@@ -1,11 +1,33 @@
 .u-text-align--center {
     @include text-align--center;
+
+    &__mobile-tablet-only {
+        @include text-align--center;
+        @include breakpoint(tablet-landscape-up) {
+            text-align: unset;
+        }
+    }
+    
 }
 
 .u-text-align--left {
     @include text-align--left;
+
+    &__mobile-tablet-only {
+        @include text-align--left;
+        @include breakpoint(tablet-landscape-up) {
+            text-align: unset;
+        }
+    }
 }
 
 .u-text-align--right {
     @include text-align--right;
+
+    &__mobile-tablet-only {
+        @include text-align--right;
+        @include breakpoint(tablet-landscape-up) {
+            text-align: unset;
+        }
+    }
 }
