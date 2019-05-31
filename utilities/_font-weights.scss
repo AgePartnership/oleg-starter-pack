@@ -1,0 +1,13 @@
+.u-fweight {
+    &--light {
+        font-weight: $light;
+    }
+
+    &--regular {
+        font-weight: $regular;
+    }
+
+    &--bold {
+        font-weight: $bold;
+    }
+}
