@@ -1,3 +1,7 @@
+$light: 300 !default;
+$regular: 400 !default;
+$bold: 700 !default;
+
 .u-fweight {
     &--light {
         font-weight: $light;
