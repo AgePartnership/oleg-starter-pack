@@ -20,10 +20,14 @@
     }
 }
 
-@each $direction in top, left, bottom, right {
-    .u-cancel-padding {
+.u-cancel-padding {
+    @each $direction in top, left, bottom, right {
         &--#{$direction} {
             padding-#{$direction}: 0 !important;
         }
+    }
+
+    &--all {
+        padding: 0!important;
     }
 }
