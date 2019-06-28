@@ -20,10 +20,14 @@
     }
 }
 
-@each $direction in top, left, bottom, right {
-    .u-cancel-gutter {
+.u-cancel-gutter {
+    @each $direction in top, left, bottom, right {
         &--#{$direction} {
             margin-#{$direction}: 0!important;
         }
+    }
+
+    &--all {
+        margin: 0!important;
     }
 }
