@@ -26,9 +26,10 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
     background-size: $value;
 }
 
-// Text alignments
-// Dev note: This exists here as a mixin so you can include it in your CSS if you wish.
-// You can also implement these rules using a class in your HTML. Refer to base/_text-align.scss
+/* Text Alignments
+    Dev note: This exists here as a mixin so you can include it in your CSS if you wish.
+    You can also implement these rules using a class in your HTML. Refer to base/_text-align.scss
+*/
 @mixin text-align--center {
     text-align: center;
 }
@@ -37,4 +38,14 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
 }
 @mixin text-align--right {
     text-align: right;
+}
+
+/* Webkit Appearence
+    Usage: @include appearance(none);
+    See https://developer.mozilla.org/en-US/docs/Web/CSS/appearance#Values for available values
+*/
+@mixin appearance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
 }
