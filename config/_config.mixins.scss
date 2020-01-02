@@ -52,7 +52,7 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
 
 /* clearfix */
 @mixin clearfix($p-el) {
-    @if $p-el == ":after" {
+    &:#{$p-el} {
         content: "";
         display: table;
         clear: both;
