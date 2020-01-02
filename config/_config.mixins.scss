@@ -49,3 +49,24 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
     -moz-appearance: $value;
     appearance: $value;
 }
+
+/* clearfix */
+@mixin clearfix($p-el) {
+    &:#{$p-el} {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin clear-left {
+    clear: left;
+}
+
+@mixin clear-right {
+    clear: right;
+}
+
+@mixin clear-both {
+    clear: both;
+}
