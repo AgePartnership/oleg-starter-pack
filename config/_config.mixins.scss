@@ -53,7 +53,7 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
 /* clearfix
     Dev Notes: Usages @include clear-both;
 
-    For the Clear-fix paremeter you can pass in psuedos element values: "after" or "before".
+    For the Clear-fix parameter you can pass in psuedos element values: "after" or "before".
 
     At this time it is used for the u-clearfix class only and set to "after" in the utilities/utilities.clears
 */
