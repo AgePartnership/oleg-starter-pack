@@ -1,15 +1,18 @@
-.u-clearfix {
-   @include clear-fix("after");
+//TODO: Make these into Mixins
+.u-clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .u-clear-left {
-    @include clear-left;
+    clear: left;
 }
 
 .u-clear-right {
-    @include clear-right;
+    clear: right;
 }
 
 .u-clear-both {
-    @include clear-both;
+    clear: both;
 }
