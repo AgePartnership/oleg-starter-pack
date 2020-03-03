@@ -18,7 +18,7 @@ Files in utilities contains useful, compact snippets of code which can be access
 
 ### Variables
 
-Files in variables contain specific variables for breakpoints and fonts.
+Files in variables contains specific variables for breakpoints, fonts, etc.
 
 ## Install using npm
 
