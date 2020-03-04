@@ -20,7 +20,7 @@ Files in the config directory contain CSS which isn't targeted directly using a 
 
 Files in utilities contains useful, compact snippets of code which can be accessed directly using a class in your HTML
 
-*Note* These files must be one of the last imported partials
+*Note* Individual utility files or the main <code>utilities.scss</code> must be one of the last imported partials
 
 ## Install using npm
 
