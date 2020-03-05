@@ -12,6 +12,8 @@ There are currently three directories, variables, base and utilities. They are i
 
 Files in variables contains specific variables for breakpoints, fonts, etc.
 
+These variables are the default AP variables and can be overridden in other brand kits
+
 ### Base
 
 Files in the base directory contain CSS which isn't targeted directly using a class but is compiled into the final CSS output (eg box-sizing or reset). It also contains usful mixins such as breakpoints.
