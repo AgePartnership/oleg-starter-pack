@@ -6,21 +6,21 @@ This package is distributed through [npm](https://www.npmjs.com/).
 
 ## File structure
 
-There are currently three directories, config, variables and utilities. They are intended to be used on any project but the key difference is how the code is used.
+There are currently three directories, variables, base and utilities. They are intended to be used on any project but the key difference is how the code is used.
 
 ### Variables
 
 Files in variables contains specific variables for breakpoints, fonts, etc.
 
-### Config
+### Base
 
-Files in the config directory contain CSS which isn't targeted directly using a class but is compiled into the final CSS output (eg box-sizing or reset). It also contains usful mixins such as breakpoints.
+Files in the base directory contain CSS which isn't targeted directly using a class but is compiled into the final CSS output (eg box-sizing or reset). It also contains usful mixins such as breakpoints.
 
 ### Utilities
 
 Files in utilities contains useful, compact snippets of code which can be accessed directly using a class in your HTML
 
-*Note* Individual utility files or the main <code>utilities.scss</code> must be one of the last imported partials
+*Note* Individual utility files or the main `utilities.scss` must be one of the last imported partials
 
 ## Install using npm
 
@@ -58,12 +58,12 @@ Alternatively, you can include files individually to only use the files you need
 
 <pre>
     <code>
-        @import "node_modules/oleg-starter-pack/config/config.mixins";
-        @import "node_modules/oleg-starter-pack/config/config.reset";
-        @import "node_modules/oleg-starter-pack/config/config.breakpoints";
-        @import "node_modules/oleg-starter-pack/config/config.box-sizing";
-        @import "node_modules/oleg-starter-pack/utilities/utilities.clears";
-        @import "node_modules/oleg-starter-pack/utilities/utilities.text-align";
+        @import "node_modules/oleg-starter-pack/base/mixins";
+        @import "node_modules/oleg-starter-pack/base/reset";
+        @import "node_modules/oleg-starter-pack/base/breakpoints";
+        @import "node_modules/oleg-starter-pack/base/box-sizing";
+        @import "node_modules/oleg-starter-pack/utilities/clears";
+        @import "node_modules/oleg-starter-pack/utilities/text-align";
     </code>
 </pre>
 

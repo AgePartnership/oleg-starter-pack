@@ -1,8 +1,18 @@
-//variables
+/*
+
+This file imports all 3 main partials into one file. This is required for legacy projects still using all.scss.
+
+Using _all.scss (which historically is one of the first partials to be imported in a project's scss config file) is not recommended as it opens up the risk of classes in utilities/_utilities.scss being overwritten by other classes declared in the stylesheet with the same CSS specificity score.
+
+For future use, import the below partials individually, with the utilities partial imported close to bottom of your config stylesheet.
+
+*/
+
+// Variables
 @import "variables/variables";
 
-//config
-@import "config/config";
+// Base
+@import "base/base";
 
-//Utilities
+// Utilities
 @import "utilities/utilities";
