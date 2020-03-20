@@ -6,15 +6,23 @@ This package is distributed through [npm](https://www.npmjs.com/).
 
 ## File structure
 
-There are currently two directories, base and utilities. They are both intended to be used on any project but the key difference is how the code is used.
+There are currently three directories, variables, base and utilities. They are intended to be used on any project but the key difference is how the code is used.
+
+### Variables
+
+Files in variables contains specific variables for breakpoints, fonts, etc.
+
+These variables are the default AP variables and can be overridden in other brand kits
 
 ### Base
 
 Files in the base directory contain CSS which isn't targeted directly using a class but is compiled into the final CSS output (eg box-sizing or reset). It also contains usful mixins such as breakpoints.
 
-### Utitilities
+### Utilities
 
 Files in utilities contains useful, compact snippets of code which can be accessed directly using a class in your HTML
+
+*Note* Individual utility files or the main `utilities.scss` must be one of the last imported partials
 
 ## Install using npm
 
