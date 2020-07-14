@@ -1,9 +1,9 @@
 {
-  "name": "oleg-starter-pack",
-  "version": "2.0.0",
-  "description": "Some handy base Sass and utility classes for use in projects.",
-  "main": "index.js",
-  "repository": "git@github.com:AgePartnership/oleg-starter-pack.git",
-  "author": "Sam Hardacre <me@nocturnalmonkey.com>",
-  "license": "MIT"
+    "name": "oleg-starter-pack",
+    "version": "2.0.1",
+    "description": "Some handy base Sass and utility classes for use in projects.",
+    "main": "index.js",
+    "repository": "git@github.com:AgePartnership/oleg-starter-pack.git",
+    "author": "Sam Hardacre <me@nocturnalmonkey.com>",
+    "license": "MIT"
 }
