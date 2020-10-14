@@ -1,0 +1,40 @@
+// Grid
+// Example use: @include grid;
+@mixin grid {
+    display: -ms-grid;
+    display: grid;
+}
+
+// Inline Grid
+// Example use: @include inline-grid;
+@mixin inline-grid {
+    display: -ms-inline-grid;
+    display: inline-grid;
+}
+
+// Grid Template Rows
+// Example use: @include grid-template-rows(auto, minmax(50px, 1fr), 100px)
+// Note: You must use an Autoprefixer to use repeat() with grid-template-columns in IE11
+@mixin grid-template-rows($values) {
+    -ms-grid-rows: $values;
+    grid-template-rows: $values;
+}
+
+// Grid Template Columns
+// Example use: @include grid-template-columns(1fr, 1fr, 100px)
+// Note: You must use an Autoprefixer to use repeat() with grid-template-columns in IE11
+@mixin grid-template-columns($values) {
+    -ms-grid-columns: $values;
+    grid-template-columns: $values;
+}
+
+// To position individual grid cells
+// Example use: @include grid-cell(2,2,1,1)
+@mixin grid-cell($col-start, $col-end, $row-start, $row-end) {
+    -ms-grid-column: $col-start;
+    -ms-grid-column-span: $col-end - $col-start;
+    -ms-grid-row: $row-start;
+    -ms-grid-row-span: $row-end - $row-start;
+    grid-column: #{$col-start}/#{$col-end};
+    grid-row: #{$row-start}/#{$row-end};
+}
