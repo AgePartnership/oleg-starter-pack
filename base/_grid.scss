@@ -31,10 +31,10 @@
 // To position individual grid cells
 // Example use: @include grid-cell(2,2,1,1)
 @mixin grid-cell($col-start, $col-end, $row-start, $row-end) {
-    grid-column: #{$col-start}/#{$col-end};
     -ms-grid-column: $col-start;
+    grid-column: #{$col-start}/#{$col-end};
     -ms-grid-column-span: $col-end - $col-start;
     -ms-grid-row: $row-start;
-    -ms-grid-row-span: $row-end - $row-start;
     grid-row: #{$row-start}/#{$row-end};
+    -ms-grid-row-span: $row-end - $row-start;
 }
