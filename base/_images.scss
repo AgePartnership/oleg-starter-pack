@@ -1,7 +1,6 @@
 // The CSS attributes below will make images responsive by default. The will flex as though width is set to 100% but will never exceed the width of the image's original dimensions. If you'd like full-width images regardless of the image dimensions, refer to utilities/_images.scss for the class name
 
 // TODO: Test compatibility with svg
-
 img {
     height: auto;
     max-width: 100%;
