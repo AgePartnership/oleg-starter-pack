@@ -1,9 +1,8 @@
 // TODO: Convert into mixins
-
-.u-clearfix:after {
-    content: "";
-    display: table;
+.u-clearfix::after {
     clear: both;
+    content: '';
+    display: table;
 }
 
 .u-clear-left {
