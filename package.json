@@ -1,6 +1,6 @@
 {
     "name": "oleg-starter-pack",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "Some handy base Sass and utility classes for use in projects.",
     "main": "index.js",
     "scripts": {
