@@ -25,11 +25,13 @@ Files in utilities contains useful, compact snippets of code which can be access
 *Note* Individual utility files or the main `utilities.scss` must be one of the last imported partials
 
 ## Publishing Changes
-We use [`npm version`](https://docs.npmjs.com/cli/v6/commands/npm-version) with some custom commit hooks in `package.json` to handle updating our package version, creating our Git release and tag, and pushing the changes to Github. There's no need to do a `git flow release`, to manually update the package version in package.json, or to manually merge your code into master and push your tags.
+We use [`npm version`](https://docs.npmjs.com/cli/v6/commands/npm-version) with some custom commit hooks in `package.json` to handle updating our package version, creating our Git release and tag, and pushing the changes to Github. There's no need to do a `git flow release`, to manually update the package version in package.json, or to manually merge your code into master and push your tags. We then use [`npm publish`](https://docs.npmjs.com/cli/v7/commands/npm-publish) to publish the changes to the registry.
 
 Here's the process for publishing your changes:
 1. Merge your approved changes into develop and pull down develop locally.
 2. Run `npm version [patch / minor / major]`, following normal [semantic versioning constraints](https://semver.org/).
+3. Run `npm publish` to publish the new version. You can run `npm publish --dry-run` first to check what you expect to happen actually happens.
+4. Check that the latest version has been published [`here`](https://www.npmjs.com/package/oleg-starter-pack). It might take a few minutes for the page to update to the latest version.
 
 ## Install using npm
 
