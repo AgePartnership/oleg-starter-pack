@@ -1,6 +1,6 @@
 // Grid
 // Example use: @include grid;
-@use "sass:list";
+@use 'sass:list';
 
 @mixin grid {
     display: -ms-grid;
