@@ -25,7 +25,7 @@
             @for $col from 1 through 2 {
                 @for $row from 1 through 6 {
                     &--block-#{$block}-col-#{$col}-row-#{$row} {
-                        grid-area: 'block-#{$block}-col-#{$col}-row-#{$row}';
+                        grid-area: block-#{$block}-col-#{$col}-row-#{$row};
                     }
                 }
             }
