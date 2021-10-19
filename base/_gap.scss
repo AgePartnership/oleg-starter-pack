@@ -1,0 +1,15 @@
+@mixin gap($val, $direction: null) {
+    @if $val == 0 {
+        @if $direction {
+            #{$direction}-gap: $space * ($val * 0.5);
+        } @else {
+            gap: $space * ($val * 0.5);
+        }
+    } @else {
+        @if $direction {
+            #{$direction}-gap: $space * $val;
+        } @else {
+            gap: $space * $val;
+        }
+    }
+};
