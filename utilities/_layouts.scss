@@ -15,7 +15,7 @@
     }
 
     &--4x2x2 {
-        grid-template-areas: 'block-1-col-1-row-1 block-2-col-2-row-1' 'block-1-col-1-row-2 block-2-col-2-row-2';
+        grid-template-areas: 'block-1-col-1-row-1 block-2-col-2-row-1' 'block-3-col-1-row-2 block-4-col-2-row-2';
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, auto);
     }
