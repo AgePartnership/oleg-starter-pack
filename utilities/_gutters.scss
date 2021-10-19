@@ -20,26 +20,22 @@
     }
 }
 
-.u-cancel-gutter {
-    @each $direction in top, left, bottom, right {
-        &--#{$direction} {
-            margin-#{$direction}: 0 !important;
-        }
-    }
-
-    &--all {
-        margin: 0 !important;
-    }
+.u-gutter-all-0 {
+    margin: $space * 0.5;
 }
 
-@each $direction in top, left, bottom, right, all {
-    @if not direction == all {
-        .u-gutter-#{$direction}-0 {
-            margin-#{$direction}: $space * 0.5;
-        }
-    } @else {
-        .u-gutter-all-0 {
-            margin: $space * 0.5;
+.u-cancel-gutter--all {
+    margin: 0 !important;
+}
+
+@each $direction in top, left, bottom, right {
+    .u-gutter-#{$direction}-0 {
+        margin-#{$direction}: $space * 0.5;
+    }
+
+    .u-cancel-gutter {
+        &--#{$direction} {
+            margin-#{$direction}: 0 !important;
         }
     }
 }
