@@ -1,4 +1,4 @@
-@for $i from 1 through 10 {
+@for $i from 0 through 10 {
     .u-gutter-all-#{$i} {
         margin: $space * $i;
     }
@@ -29,5 +29,17 @@
 
     &--all {
         margin: 0 !important;
+    }
+}
+
+@each $direction in top, left, bottom, right, all {
+    @if not direction == all {
+        .u-gutter-#{$direction}-0 {
+            margin-#{$direction}: $space * 0.5;
+        }
+    } @else {
+        .u-gutter-all-0 {
+            margin: $space * 0.5;
+        }
     }
 }

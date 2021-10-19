@@ -31,3 +31,15 @@
         padding: 0 !important;
     }
 }
+
+@each $direction in top, left, bottom, right, all {
+    @if not direction == all {
+        .u-padding-#{$direction}-0 {
+            padding-#{$direction}: $space * 0.5;
+        }
+    } @else {
+        .u-padding-all-0 {
+            padding: $space * 0.5;
+        }
+    }
+}
