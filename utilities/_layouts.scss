@@ -37,12 +37,12 @@ $directions: column, row;
 
 @for $i from 0 to 8 {
     @each $direction in $directions {
-        .gap--#{$i}--#{$direction} {
+        .u-gap--#{$i}--#{$direction} {
             @include gap($i, '#{$direction}');
         }
     }
 
-    .gap--#{$i} {
+    .u-gap--#{$i} {
         @include gap($i);
     }
 }
