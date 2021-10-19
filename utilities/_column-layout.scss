@@ -1,4 +1,4 @@
-.flex {
+.u-flex {
     display: flex;
 
     &__col {
@@ -10,7 +10,7 @@
     }
 }
 
-.grid {
+.u-grid {
     display: grid;
     grid-template-areas: 'header header' 'content content' 'footer footer';
     grid-template-columns: 1fr 1fr;
@@ -21,8 +21,8 @@
             grid-area: header;
         }
 
-        &--content {
-            grid-area: content;
+        &--content-1 {
+            grid-area: content-1;
         }
 
         &--footer {
@@ -38,19 +38,5 @@
     &__col-2 {
         grid-column-end: 3;
         grid-column-start: 2;
-    }
-}
-
-@for $i from 1 through 10 {
-    .gap--#{$i} {
-        gap: $space * $i;
-    }
-
-    .gap--column--#{$i} {
-        column-gap: $space * $i;
-    }
-
-    .gap--row--#{$i} {
-        row-gap: $space * $i;
     }
 }
