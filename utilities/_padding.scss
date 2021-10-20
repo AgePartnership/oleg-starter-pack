@@ -1,36 +1,12 @@
-@for $i from 1 through 10 {
-    .u-padding-all-#{$i} {
-        padding: $space * $i;
-    }
-
-    .u-padding-top-#{$i} {
-        padding-top: $space * $i;
-    }
-
-    .u-padding-right-#{$i} {
-        padding-right: $space * $i;
-    }
-
-    .u-padding-bottom-#{$i} {
-        padding-bottom: $space * $i;
-    }
-
-    .u-padding-left-#{$i} {
-        padding-left: $space * $i;
-    }
-}
-
-.u-padding-all-0 {
-    margin: $space * 0.5;
-}
-
-.u-cancel-padding--all {
-    margin: 0 !important;
-}
-
 @each $direction in top, left, bottom, right {
-    .u-padding-#{$direction}-0 {
-        padding-#{$direction}: $space * 0.5;
+    @for $i from 0 through 10 {
+        .u-padding-#{$direction}-#{$i} {
+            @if $i == 0 {
+                padding-#{$direction}: $space * 0.5;
+            } @else {
+                padding-#{$direction}: $space * $i;
+            }
+        }
     }
 
     .u-cancel-padding {
@@ -38,4 +14,12 @@
             padding-#{$direction}: 0 !important;
         }
     }
+}
+
+.u-padding-all-0 {
+    padding: $space * 0.5;
+}
+
+.u-cancel-padding--all {
+    padding: 0 !important;
 }
