@@ -3,16 +3,37 @@
 }
 
 $directions: column, row;
+$breakpoints: phone-only, tablet-portrait-up, tablet-portrait-only, tablet-landscape-up, tablet-landscape-only, desktop-up, desktop-only,  big-desktop-up;
 
 @for $i from 0 to 8 {
     @each $direction in $directions {
+        @each $breakpoint in $breakpoints {
+            // Gap, in a direction, within a breakpoint
+            .u-gap--#{$i}--#{$direction}--#{$breakpoint} {
+                @include breakpoint(#{$breakpoint}) {
+                    @include gap($i, '#{$direction}');
+                }
+            }
+        }
+
+        // Gap, in a direction
         .u-gap--#{$i}--#{$direction} {
             @include gap($i, '#{$direction}');
         }
     }
 
+    // Gap
     .u-gap--#{$i} {
         @include gap($i);
+    }
+
+    // Gap, within a breakpoint
+    @each $breakpoint in $breakpoints {
+        .u-gap--#{$i}--#{$breakpoint} {
+            @include breakpoint(#{$breakpoint}) {
+                @include gap($i);
+            }
+        }
     }
 }
 
