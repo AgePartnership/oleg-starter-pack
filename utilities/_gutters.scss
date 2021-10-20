@@ -1,8 +1,14 @@
-@each $direction in top, left, bottom, right {
+@each $direction in top, left, bottom, right, x, y {
     @for $i from 0 through 10 {
         .u-gutter-#{$direction}-#{$i} {
             @if $i == 0 {
                 margin-#{$direction}: $space * 0.5;
+            } @else if $i == x {
+                margin-left: $space * $i;
+                margin-right: $space * $i;
+            } @else if $i == y {
+                margin-bottom: $space * $i;
+                margin-top: $space * $i;
             } @else {
                 margin-#{$direction}: $space * $i;
             }
@@ -11,7 +17,15 @@
 
     .u-cancel-gutter {
         &--#{$direction} {
-            margin-#{$direction}: 0 !important;
+            @if $direction == x {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            } @else if $direction == y {
+                margin-bottom: 0 !important;
+                margin-top: 0 !important;
+            } @else {
+                margin-#{$direction}: 0 !important;
+            }
         }
     }
 }

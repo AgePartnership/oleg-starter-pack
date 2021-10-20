@@ -1,8 +1,14 @@
-@each $direction in top, left, bottom, right {
+@each $direction in top, left, bottom, right, x, y {
     @for $i from 0 through 10 {
         .u-padding-#{$direction}-#{$i} {
             @if $i == 0 {
                 padding-#{$direction}: $space * 0.5;
+            } @else if $i == x {
+                padding-left: $space * $i;
+                padding-right: $space * $i;
+            } @else if $i == y {
+                padding-bottom: $space * $i;
+                padding-top: $space * $i;
             } @else {
                 padding-#{$direction}: $space * $i;
             }
@@ -11,7 +17,15 @@
 
     .u-cancel-padding {
         &--#{$direction} {
-            padding-#{$direction}: 0 !important;
+            @if $direction == x {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            } @else if $direction == y {
+                padding-bottom: 0 !important;
+                padding-top: 0 !important;
+            } @else {
+                padding-#{$direction}: 0 !important;
+            }
         }
     }
 }
