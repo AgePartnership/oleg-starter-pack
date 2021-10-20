@@ -28,11 +28,11 @@
     .u-cancel-padding {
         &--#{$direction} {
             @if $direction == x {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+                padding-left: 0;
+                padding-right: 0;
             } @else if $direction == y {
-                padding-bottom: 0 !important;
-                padding-top: 0 !important;
+                padding-bottom: 0;
+                padding-top: 0;
             } @else {
                 padding-#{$direction}: 0 !important;
             }
