@@ -1,36 +1,5 @@
 .u-grid {
     display: grid;
-
-    // blocks x columns x rows
-    &--4x2x6 {
-        grid-template-areas: 'block-1-col-1-row-1 block-2-col-2-row-1' 'block-1-col-1-row-2 block-2-col-2-row-2' 'block-1-col-1-row-3 block-2-col-2-row-3' 'block-3-col-1-row-4 block-4-col-2-row-4' 'block-3-col-1-row-5 block-4-col-2-row-5' 'block-3-col-1-row-6 block-4-col-2-row-6';
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, auto);
-    }
-
-    &--2x2x2 {
-        grid-template-areas: 'block-1-col-1-row-1 block-2-col-2-row-1' 'block-1-col-1-row-2 block-2-col-2-row-2';
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
-    }
-
-    &--4x2x2 {
-        grid-template-areas: 'block-1-col-1-row-1 block-2-col-2-row-1' 'block-3-col-1-row-2 block-4-col-2-row-2';
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
-    }
-
-    &__area {
-        @for $block from 1 through 4 {
-            @for $col from 1 through 2 {
-                @for $row from 1 through 6 {
-                    &--block-#{$block}-col-#{$col}-row-#{$row} {
-                        grid-area: block-#{$block}-col-#{$col}-row-#{$row};
-                    }
-                }
-            }
-        }
-    }
 }
 
 $directions: column, row;
@@ -47,14 +16,15 @@ $directions: column, row;
     }
 }
 
-.u-flex {
-    display: flex;
+// TODO: Am I needed? Yes we need a Bulma replacement
+// .u-flex {
+//     display: flex;
 
-    &__col {
-        flex: 1;
-    }
+//     &__col {
+//         flex: 1;
+//     }
 
-    &--direction--column {
-        flex-direction: column;
-    }
-}
+//     &--direction--column {
+//         flex-direction: column;
+//     }
+// }
