@@ -1,22 +1,18 @@
-@for $i from 1 through 10 {
-    .u-gutter-all-#{$i} {
-        margin: $space * $i;
+@each $direction in top, left, bottom, right {
+    @for $i from 0 through 10 {
+        .u-gutter-#{$direction}-#{$i} {
+            @if $i == 0 {
+                margin-#{$direction}: $space * 0.5;
+            } @else {
+                margin-#{$direction}: $space * $i;
+            }
+        }
     }
 
-    .u-gutter-top-#{$i} {
-        margin-top: $space * $i;
-    }
-
-    .u-gutter-right-#{$i} {
-        margin-right: $space * $i;
-    }
-
-    .u-gutter-bottom-#{$i} {
-        margin-bottom: $space * $i;
-    }
-
-    .u-gutter-left-#{$i} {
-        margin-left: $space * $i;
+    .u-cancel-gutter {
+        &--#{$direction} {
+            margin-#{$direction}: 0 !important;
+        }
     }
 }
 
@@ -26,16 +22,4 @@
 
 .u-cancel-gutter--all {
     margin: 0 !important;
-}
-
-@each $direction in top, left, bottom, right {
-    .u-gutter-#{$direction}-0 {
-        margin-#{$direction}: $space * 0.5;
-    }
-
-    .u-cancel-gutter {
-        &--#{$direction} {
-            margin-#{$direction}: 0 !important;
-        }
-    }
 }
