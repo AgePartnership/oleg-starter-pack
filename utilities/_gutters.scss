@@ -2,15 +2,25 @@
     @for $i from 0 through 10 {
         .u-gutter-#{$direction}-#{$i} {
             @if $i == 0 {
-                margin-#{$direction}: $space * 0.5;
-            } @else if $i == x {
-                margin-left: $space * $i;
-                margin-right: $space * $i;
-            } @else if $i == y {
-                margin-bottom: $space * $i;
-                margin-top: $space * $i;
+                @if $direction == x {
+                    margin-left: $space * 0.5;
+                    margin-right: $space * 0.5;
+                } @else if $direction == y {
+                    margin-bottom: $space * 0.5;
+                    margin-top: $space * 0.5;
+                } @else {
+                    margin-#{$direction}: $space * 0.5;
+                }
             } @else {
-                margin-#{$direction}: $space * $i;
+                @if $direction == x {
+                    margin-left: $space * $i;
+                    margin-right: $space * $i;
+                } @else if $direction == y {
+                    margin-bottom: $space * $i;
+                    margin-top: $space * $i;
+                } @else {
+                    margin-#{$direction}: $space * $i;
+                }
             }
         }
     }

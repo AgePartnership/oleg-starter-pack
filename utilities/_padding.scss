@@ -2,15 +2,25 @@
     @for $i from 0 through 10 {
         .u-padding-#{$direction}-#{$i} {
             @if $i == 0 {
-                padding-#{$direction}: $space * 0.5;
-            } @else if $i == x {
-                padding-left: $space * $i;
-                padding-right: $space * $i;
-            } @else if $i == y {
-                padding-bottom: $space * $i;
-                padding-top: $space * $i;
+                @if $direction == x {
+                    padding-left: $space * 0.5;
+                    padding-right: $space * 0.5;
+                } @else if $direction == y {
+                    padding-bottom: $space * 0.5;
+                    padding-top: $space * 0.5;
+                } @else {
+                    padding-#{$direction}: $space * 0.5;
+                }
             } @else {
-                padding-#{$direction}: $space * $i;
+                @if $direction == x {
+                    padding-left: $space * $i;
+                    padding-right: $space * $i;
+                } @else if $direction == y {
+                    padding-bottom: $space * $i;
+                    padding-top: $space * $i;
+                } @else {
+                    padding-#{$direction}: $space * $i;
+                }
             }
         }
     }
