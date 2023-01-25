@@ -1,8 +1,12 @@
-// Grid
-// Example use: @include grid;
-@mixin grid {
-    display: -ms-grid;
+//Grid
+// Example use: @include grid(repeat(12, 1fr), 32px, 75px);
+//Will produce a 12 column grid with 32px column gap and 75px spacing between start and end
+//Used in Layout.scss for pre-configured grids 
+@mixin grid( $columns: null, $gap: null, $padding: null) {
     display: grid;
+    gap: $gap;
+    grid-template-columns: $columns;
+    padding: 0 $padding;
 }
 
 // Inline Grid
