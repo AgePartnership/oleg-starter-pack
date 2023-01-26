@@ -1,8 +1,7 @@
 //Full responsive layout based on design system
 //Todo: amend spacing calc for between 414px and 599 as some misalignment
-
 .grid {
-@include grid(repeat(6, 1fr), 16px, 24px);
+    @include grid(repeat(6, 1fr), 16px, 24px);
     @media ($mobile-upper <= width <= $desktop-lower) {
         @include grid(repeat(12, 1fr), 32px, 75px);
     }
@@ -19,15 +18,15 @@
 }
 
 .col-3 {
-  	grid-column: span 6;
+    grid-column: span 6;
     @media (width >= $mobile-upper) {
-		grid-column: span 4;
+        grid-column: span 4;
     }
 }
 
 .col-4 {
     grid-column: span 6;
     @media (width >= $mobile-upper) {
-		grid-column: span 3;
+        grid-column: span 3;
     }
 }
