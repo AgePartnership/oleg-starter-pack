@@ -4,11 +4,11 @@
 
 .grid {
     @include grid(repeat(6, 1fr), 16px, 24px);
-    
+
     @media ($mobile-upper <= width <= $desktop-lower) {
         @include grid(repeat(12, 1fr), 32px, 75px);
     }
-    
+
     @media (width >= ($desktop-lower + 1)) {
         @include grid(repeat(12, 1fr), 32px, 100px);
     }
@@ -20,14 +20,14 @@
       grid-column: span 12;
     }
   }
-  
+
   .col-3 {
     grid-column: span 6;
     @media (width >= $mobile-upper) {
       grid-column: span 4;
     }
   }
-  
+
   .col-4 {
     grid-column: span 6;
     @media (width >= $mobile-upper) {
