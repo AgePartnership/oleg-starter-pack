@@ -6,8 +6,8 @@
 	display: grid;
 	gap: $gap;
 	grid-template-columns: $columns;
+    grid-template-rows: $row-height;
 	padding: 0 $padding;
-	grid-template-rows: $row-height;
 }
 
 
