@@ -3,11 +3,11 @@
 //Will produce a 12 column grid with auto row height and 32px column gap and 75px spacing between start and end
 //Used in Layout.scss for pre-configured grids
 @mixin grid($columns: null, $row-height: null, $gap: null, $padding: null) {
-	display: grid;
-	gap: $gap;
-	grid-template-columns: $columns;
+    display: grid;
+    gap: $gap;
+    grid-template-columns: $columns;
     grid-template-rows: $row-height;
-	padding: 0 $padding;
+    padding: 0 $padding;
 }
 
 
