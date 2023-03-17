@@ -33,9 +33,11 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
 @mixin text-align--center {
     text-align: center;
 }
+
 @mixin text-align--left {
     text-align: left;
 }
+
 @mixin text-align--right {
     text-align: right;
 }
@@ -103,8 +105,8 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
                     transform: translateY(-100%);
                 }
 
-                transition: opacity 0.1s linear;
-                transition: transform 0.22s ease-out 0.1s;
+                transition: opacity 0.1s linear,
+                transform 0.22s ease-out 0.1s;
             }
         }
 
@@ -112,6 +114,7 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
 
             //Only apply hover if `$transition-axis` is not false
             @if $transition-axis !=false {
+                opacity: 1;
                 @include transition(all, 0.075s, ease-in-out 0.05s);
 
                 @if $transition-axis =='x' {
@@ -146,6 +149,8 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
                 }
 
                 &:last-child {
+                    opacity: 0;
+
                     @if $transition-axis =='x' {
 
                         //If Right Position icon
