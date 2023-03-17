@@ -64,3 +64,155 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
     position: absolute;
     width: 1px;
 }
+
+//Mixin to provide icon animation and position styles
+/*
+    Usage:
+        @include icon-setup('left', 'x', 0); //Icon positioned Left, animate on X axis, 0px margin for between text and icon
+        @include icon-setup('right', 'x', 0); //Icon positioned Right, animate on X axis, 0px margin for between text and icon
+        @include icon-setup('left', false, 0); //Icon positioned Left, disable animation, 0px margin for between text and icon
+        @include icon-setup(false, false, 0); //Disable positioning (Assume there is nothing to position) and animation, 0px margin for between text and icon
+*/
+@mixin icon-setup($position: false, $transition-axis: false, $margin: 0) {
+    #{ $self }__icon-asset {
+        &:first-child {
+
+            //If false, do not show the first child
+            @if $transition-axis ==false {
+                display: none;
+            }
+
+            @else {
+                opacity: 0;
+                position: absolute;
+
+                @if $transition-axis =='x' {
+
+                    //If Right Position icon
+                    @if $position =='right' {
+                        transform: translateX(-100%);
+                    }
+
+                    //If Left Position icon
+                    @if $position =='left' {
+                        transform: translateX(100%);
+                    }
+                }
+
+                @if $transition-axis =='y' {
+                    transform: translateY(-100%);
+                }
+
+                transition: opacity 0.1s linear;
+                transition: transform 0.22s ease-out 0.1s;
+            }
+        }
+
+        &:last-child {
+
+            //Only apply hover if `$transition-axis` is not false
+            @if $transition-axis !=false {
+                @include transition(all, 0.075s, ease-in-out 0.05s);
+
+                @if $transition-axis =='x' {
+                    transform: translateX(0%);
+                }
+
+                @if $transition-axis =='y' {
+                    transform: translateY(0%);
+                }
+            }
+        }
+    }
+
+    //Only apply hover if `$transition-axis` is not false
+    @if $transition-axis !=false {
+
+        //On hover only
+        &:hover {
+
+            //Icon animation
+            #{ $self }__icon-asset {
+                &:first-child {
+                    opacity: 1;
+
+                    @if $transition-axis =='x' {
+                        transform: translateX(0);
+                    }
+
+                    @if $transition-axis =='y' {
+                        transform: translateY(0%);
+                    }
+                }
+
+                &:last-child {
+                    @if $transition-axis =='x' {
+
+                        //If Right Position icon
+                        @if $position =='right' {
+                            transform: translateX(100%);
+                        }
+
+                        //If Left Position icon
+                        @if $position =='left' {
+                            transform: translateX(-100%);
+                        }
+                    }
+
+                    @if $transition-axis =='y' {
+                        transform: translateY(100%);
+                    }
+                }
+            }
+        }
+    }
+
+    //If Left Position icon
+    @if $position =='left' {
+        #{ $self }__icon {
+            @include order(-1);
+            margin-right: $margin; //Margin between icon and text
+        }
+    }
+
+    //If Right Position icon
+    @if $position =='right' {
+        #{ $self }__icon {
+            @include order(1);
+            margin-left: $margin; //Margin between icon and text
+        }
+    }
+}
+
+//Mixin to provide text decoation animation
+/*
+    Usage:
+        @include text-decoration-setup();
+*/
+@mixin text-decoration-setup($sass: $self, $colour-from: $primary-colour--light, $colour-to: $primary-colour, $weight: 1px, $line-height: 1.3rem) {
+    line-height: calc($line-height + ($weight + ($base-unit * 0.5))) !important; //1.6rem lineheight plus base unit for spacing between underline background image. Safari works better with rem sizing.
+    margin-top: -($weight + ($base-unit * 0.5)) !important; //Required to pull the text back to up due to large lineheight for underline background image
+    padding-bottom: $weight + ($base-unit * 0.5) !important;
+    text-decoration: none !important;
+
+    #{ $sass }__label {
+        //Underline with a background image. This allows an underline effect for each line if the link is split accross multiple lines
+        @include transition(background, 0.25s, linear);
+        background-image: linear-gradient($colour-to, $colour-to), linear-gradient($colour-from, $colour-from);
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 0% $weight, 100% $weight; //$weight is the thickness of the line
+        padding-bottom: $weight + ($base-unit * 0.5); //Spacing for the background image
+        position: relative;
+    }
+
+    //On hover or expanded
+    &:hover,
+    &[aria-expanded='true'] {
+
+        //This will animate the underline
+        #{ $sass }__label {
+            background-size: 100% $weight, 100% $weight;
+        }
+    }
+}
