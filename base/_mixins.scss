@@ -105,8 +105,8 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
                     transform: translateY(-100%);
                 }
 
-                transition: opacity 0.1s linear,
-                transform 0.22s ease-out 0.1s;
+                transition: opacity 0.1s linear;
+                transition: transform 0.22s ease-out 0.1s;
             }
         }
 
@@ -114,7 +114,6 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
 
             //Only apply hover if `$transition-axis` is not false
             @if $transition-axis !=false {
-                opacity: 1;
                 @include transition(all, 0.075s, ease-in-out 0.05s);
 
                 @if $transition-axis =='x' {
@@ -131,8 +130,9 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
     //Only apply hover if `$transition-axis` is not false
     @if $transition-axis !=false {
 
-        //On hover only
-        &:hover {
+        //On hover or highlight only
+        &:hover,
+        &[aria-expanded='true'] {
 
             //Icon animation
             #{ $sass }__icon-asset {
@@ -149,8 +149,6 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
                 }
 
                 &:last-child {
-                    opacity: 0;
-
                     @if $transition-axis =='x' {
 
                         //If Right Position icon
@@ -194,27 +192,26 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
     `$colour-from`: Starting underline colour
     `$colour-to`: Finish underline colour
     `$weight`: Weight of the border
-    `$offset`: Offset from the text
     `$line-height`: Line height
 
     Usage:
         @include text-decoration-setup();
-        @include text-decoration-setup('.c-component', transparent, $secondary-colour, 3px, 3px, 1.6rem);
+        @include text-decoration-setup('.c-component', transparent, $secondary-colour, 3px, 1.6rem);
 */
-@mixin text-decoration-setup($sass: $self, $colour-from: $primary-colour--light, $colour-to: $primary-colour, $weight: 1px, $offset: 4px, $line-height: 1.3rem) {
-    line-height: $line-height !important; //1.6rem lineheight plus base unit for spacing between underline background image. Safari works better with rem sizing.
-    margin-top: -($weight + $offset) !important; //Required to pull the text back to up due to large lineheight for underline background image
-    padding-bottom: ($weight + $offset) !important;
+@mixin text-decoration-setup($sass: $self, $colour-from: $primary-colour--light, $colour-to: $primary-colour, $weight: 1px, $line-height: 1.3rem) {
+    line-height: calc($line-height + ($weight + ($base-unit * 0.5))) !important; //1.6rem lineheight plus base unit for spacing between underline background image. Safari works better with rem sizing.
+    margin-top: -($weight + ($base-unit * 0.5)) !important; //Required to pull the text back to up due to large lineheight for underline background image
+    padding-bottom: $weight + ($base-unit * 0.5) !important;
     text-decoration: none !important;
 
     #{ $sass }__label {
         //Underline with a background image. This allows an underline effect for each line if the link is split accross multiple lines
         @include transition(background, 0.25s, linear);
         background-image: linear-gradient($colour-to, $colour-to), linear-gradient($colour-from, $colour-from);
-        background-position: 0 calc(100% - ($weight));
+        background-position: 0 100%;
         background-repeat: no-repeat;
         background-size: 0% $weight, 100% $weight; //$weight is the thickness of the line
-        padding-bottom: ($weight + $offset); //Spacing for the background image
+        padding-bottom: $weight + ($base-unit * 0.5); //Spacing for the background image
         position: relative;
     }
 
