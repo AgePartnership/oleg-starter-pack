@@ -69,11 +69,15 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
 
 //Mixin to provide icon animation and position styles
 /*
-    Usage:
-        @include icon-setup('left', 'x', 0); //Icon positioned Left, animate on X axis, 0px margin for between text and icon
-        @include icon-setup('right', 'x', 0); //Icon positioned Right, animate on X axis, 0px margin for between text and icon
-        @include icon-setup('left', false, 0); //Icon positioned Left, disable animation, 0px margin for between text and icon
-        @include icon-setup(false, false, 0); //Disable positioning (Assume there is nothing to position) and animation, 0px margin for between text and icon
+    `$position`: The positon of the icon, either 'left' or 'right'
+    `$transition-axis`: The axis to be used for the transition effect, either 'x' or 'y'
+    `$margin`: Margin to be applied which seperates the icon from the label text
+
+    Usage examples:
+        @include icon-setup('.c-nav__link', 'left', 'x', 0); //Icon positioned Left, animate on X axis, 0px margin for between text and icon
+        @include icon-setup('.c-nav__link', 'right', 'x', 0); //Icon positioned Right, animate on X axis, 0px margin for between text and icon
+        @include icon-setup('.c-nav__link', 'left', false, 0); //Icon positioned Left, disable animation, 0px margin for between text and icon
+        @include icon-setup('.c-nav__link', false, false, 0); //Disable positioning (Assume there is nothing to position) and animation, 0px margin for between text and icon
 */
 @mixin icon-setup($sass: $self, $position: false, $transition-axis: false, $margin: 0) {
     #{ $sass }__icon-asset {
@@ -192,7 +196,7 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
     `$weight`: Weight of the border
     `$line-height`: Line height
 
-    Usage:
+    Usage examples:
         @include text-decoration-setup();
         @include text-decoration-setup('.c-component', transparent, $secondary-colour, 3px, 1.6rem);
 */
