@@ -82,9 +82,7 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
             //If false, do not show the first child
             @if $transition-axis ==false {
                 display: none;
-            }
-
-            @else {
+            } @else {
                 opacity: 0;
                 position: absolute;
 
