@@ -4,6 +4,11 @@ The files contained here are intended to provide a project agnostic starting poi
 
 This package is distributed through [npm](https://www.npmjs.com/).
 
+Requires:
+
+* `nvm use lts/erbium`
+* `npm install -g npm@6.14.18`
+
 ## File structure
 
 There are currently three directories, variables, base and utilities. They are intended to be used on any project but the key difference is how the code is used.
