@@ -16,6 +16,6 @@
         "stylelint-fix": "stylelint --rd --rdd \"**/*.{css,scss,sass}\" -s scss --fix"
     },
     "devDependencies": {
-        "ap-stylelint-config": "github:agepartnership/ap-stylelint-config"
+        "ap-stylelint-config": "git+ssh://git@github.com/AgePartnership/ap-stylelint-config.git#v1.2.0"
     }
 }
