@@ -1,8 +1,8 @@
-$mobile-upper: ($tablet-portrait-lower - 1px) !default;
-$tablet-portrait-lower: 600px !default;
-$tablet-portrait-upper: ($tablet-landscape-lower - 1px) !default;
-$tablet-landscape-lower: 900px !default;
-$tablet-landscape-upper: ($desktop-lower - 1px) !default;
-$desktop-lower: 1200px !default;
-$desktop-upper: ($big-desktop-lower - 1px) !default;
 $big-desktop-lower: 1800px !default;
+$desktop-upper: ($big-desktop-lower - 1px) !default;
+$desktop-lower: 1200px !default;
+$tablet-landscape-upper: ($desktop-lower - 1px) !default;
+$tablet-landscape-lower: 900px !default;
+$tablet-portrait-upper: ($tablet-landscape-lower - 1px) !default;
+$tablet-portrait-lower: 600px !default;
+$mobile-upper: ($tablet-portrait-lower - 1px) !default;
