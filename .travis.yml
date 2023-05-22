@@ -1,6 +1,4 @@
 language: node_js
-before_install:
-  - echo "//npm.pkg.github.com/:_authToken=$GITHUB_AUTH_TOKEN" > .npmrc
 install:
 - npm install
 script:
