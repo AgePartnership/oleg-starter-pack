@@ -21,7 +21,7 @@
         }
     }
 
-    @include breakpoint('tablet-landscape-up') {
+    @include breakpoint('desktop-up') {
         @if $cancel-padding--left != true {
             padding-left: $content-wrap-padding--desktop;
         }
