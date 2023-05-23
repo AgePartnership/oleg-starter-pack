@@ -21,7 +21,7 @@
         }
     }
 
-    @media (min-width: $tablet-landscape-lower) {
+    @include breakpoint('desktop-up') {
         @if $cancel-padding--left != true {
             padding-left: $content-wrap-padding--desktop;
         }
@@ -31,7 +31,7 @@
         }
     }
 
-    @media (min-width: ($page-max-width)) {
+    @include breakpoint('big-desktop-up') {
         @if $cancel-padding--left != true {
             padding-left: $content-wrap-padding--big-desktop;
         }
