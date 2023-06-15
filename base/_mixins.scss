@@ -200,7 +200,7 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
         @include text-decoration-setup();
         @include text-decoration-setup('.c-component', transparent, $secondary-colour, 3px, 1.6rem);
 */
-@mixin text-decoration-setup($sass: $self, $colour-from: $primary-colour--light, $colour-to: $primary-colour, $weight: 1px, $line-height: 1.3rem) {
+@mixin text-decoration-setup($sass: $self, $colour-from: $primary-colour--light, $colour-to: $primary-colour, $weight: 1px, $line-height: 1.3rem, $underline-height: $weight + ($base-unit * 0.5)) {
     line-height: calc($line-height + ($weight + ($base-unit * 0.5))) !important; //1.6rem lineheight plus base unit for spacing between underline background image. Safari works better with rem sizing.
     margin-top: -($weight + ($base-unit * 0.5)) !important; //Required to pull the text back to up due to large lineheight for underline background image
     padding-bottom: $weight + ($base-unit * 0.5) !important;
@@ -213,7 +213,7 @@ Ideally, all mixins should be declared here but in some cases, they've been decl
         background-position: 0 100%;
         background-repeat: no-repeat;
         background-size: 0% $weight, 100% $weight; //$weight is the thickness of the line
-        padding-bottom: $weight + ($base-unit * 0.5); //Spacing for the background image
+        padding-bottom: $underline-height; //Spacing for the background image
         position: relative;
     }
 
