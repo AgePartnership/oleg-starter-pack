@@ -8,8 +8,8 @@
     "scripts": {
         "preversion": "git checkout develop",
         "postversion": "git push --tags origin develop && git checkout master && git pull --tags origin develop && git push --tags origin master && git checkout develop",
-        "lint:scss": "stylelint --rd --rdd \"**/*.{css,scss,sass}\" -s scss",
-        "fix:scss": "stylelint --rd --rdd \"**/*.{css,scss,sass}\" -s scss --fix"
+        "lint:scss": "stylelint --rd --rdd \"**/*.{css,scss,sass}\" --custom-syntax postcss-scss",
+        "fix:scss": "stylelint --rd --rdd \"**/*.{css,scss,sass}\" --custom-syntax postcss-scss --fix"
     },
     "repository": {
         "type": "git",
@@ -22,6 +22,8 @@
         "node": ">=12.13.0"
     },
     "devDependencies": {
-        "@agepartnership/ap-stylelint-config": "^2.0.1"
+        "@agepartnership/ap-stylelint-config": "^2.0.1",
+        "postcss": "^8.4.28",
+        "postcss-scss": "^4.0.7"
     }
 }
