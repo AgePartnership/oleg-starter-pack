@@ -25,5 +25,8 @@
         "@agepartnership/ap-stylelint-config": "^2.0.1",
         "postcss": "^8.4.28",
         "postcss-scss": "^4.0.7"
+    },
+    "dependencies": {
+        "npmrc": "^1.1.1"
     }
 }
