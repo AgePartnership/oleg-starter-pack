@@ -4,10 +4,11 @@ The files contained here are intended to provide a project agnostic starting poi
 
 This package is distributed through [npm](https://www.npmjs.com/).
 
-Requires:
+## Requirements
 
-* `nvm use lts/erbium`
-* `npm install -g npm@6.14.18`
+* Node `lts/erbium` `v12.x`
+* NPM `v6.14.x`
+
 
 ## File structure
 
