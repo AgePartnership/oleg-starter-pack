@@ -3,7 +3,7 @@
 @each $breakpoint in phone-only, tablet-portrait-up, tablet-portrait-only, tablet-landscape-up, tablet-landscape-only, desktop-up, desktop-only, big-desktop-up {
     .u-hide--#{$breakpoint} {
         @include breakpoint(#{$breakpoint}) {
-            display: none!important;
+            display: none !important;
         }
     }
 }
