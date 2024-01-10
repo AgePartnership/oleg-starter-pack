@@ -4,6 +4,12 @@ The files contained here are intended to provide a project agnostic starting poi
 
 This package is distributed through [npm](https://www.npmjs.com/).
 
+## Requirements
+
+* Node `lts/erbium` `v12.x`
+* NPM `v6.14.x`
+
+
 ## File structure
 
 There are currently three directories, variables, base and utilities. They are intended to be used on any project but the key difference is how the code is used.
@@ -31,7 +37,7 @@ Here's the process for publishing your changes:
 1. Merge your approved changes into develop and pull down develop locally.
 2. Run `npm version [patch / minor / major]`, following normal [semantic versioning constraints](https://semver.org/).
 3. Run `npm publish` to publish the new version. You can run `npm publish --dry-run` first to check what you expect to happen actually happens.
-4. Check that the latest version has been published [`here`](https://www.npmjs.com/package/oleg-starter-pack). It might take a few minutes for the page to update to the latest version.
+4. Check that the latest version has been published [`here`](https://github.com/orgs/AgePartnership/packages?repo_name=oleg-starter-pack). It might take a few minutes for the page to update to the latest version.
 
 ## Install using npm
 
